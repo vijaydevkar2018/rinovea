@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Services</title>
+  <link rel="stylesheet" href="css/services.css" />
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="prefetch" href="js/animations.js" as="script">
+  <link rel="icon" type="image/png" href="images/R-logo.png">
+  <link rel="preload" href="header.html" as="fetch" crossorigin="anonymous">
+  <link rel="preload" href="css/header.css" as="style">
+</head>
+<body>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="header-container">
+    <a class="logo" href="index.html" aria-label="Rinovea Home">
+      <img src="images/logo1.png" alt="Rinovea Logo" />
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <button
+        class="mobile-menu-icon"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="primary-nav"
+      >
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul id="primary-nav" class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="career.html">Career</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== HERO SECTION (fixed like Contact page) ===== -->
+<section class="services-hero">
+  <img src="../images/Services Page/services hero.webp" alt="Our Services" class="services-hero-img" loading="eager"/>
+  <div class="services-hero-overlay"></div>
+  <div class="services-hero-text">
+    <h2>What We Do</h2>
+    <p>Transforming ideas into impact with end-to-end digital engineering,<br> cloud, AI, and agile solutions.</p>
+  </div>
+</section>
+
+
+<!-- ===== NEW CARDS SECTION ===== -->
+<section class="services">
+  <!--<h2 class="services-heading">Our Services</h2> -->
+  <div class="services-grid">
+
+    <article class="services-card">
+      <div class="services-media">
+        <img src="../images/Services Page/Global Capability Center Enablement.webp" alt=""/>
+      </div>
+      <h3>Global Capability Center Enablement</h3>
+      <p>We handle end-to-end GCC setup, from team formation and infrastructure to compliance—helping you build high-performing, autonomous tech teams in India.</p>
+    </article>
+
+    <article class="services-card">
+      <div class="services-media">
+        <img src="../images/Services Page/Digital Engineering.webp" alt=""/>
+      </div>
+      <h3>Digital Engineering</h3>
+      <p>We engineer robust, user-centric digital platforms across web, cloud, and mobile – combining front-end finesse with backend scalability, API-first architectures, and cloud-native foundations.</p>
+    </article>
+
+    <article class="services-card">
+      <div class="services-media">
+        <img src="../images/Services Page/Mobile Development.webp" alt=""/>
+      </div>
+      <h3>Mobile Application Development</h3>
+      <p>Consumer-grade mobile experiences built for performance, usability, and engagement across platforms.</p>
+    </article>
+
+    <article class="services-card">
+      <div class="services-media">
+        <img src="../images/Services Page/Cloud Native Development.webp" alt=""/>
+      </div>
+      <h3>Cloud Native Development</h3>
+      <p>Unlock agility, reliability, and speed with modern cloud-native design – leveraging Kubernetes, serverless, and DevOps best practices across leading cloud platforms.</p>
+    </article>
+
+    <article class="services-card">
+      <div class="services-media">
+        <img src="../images/Services Page/AI and Intelligent Automation.webp" alt=""/>
+      </div>
+      <h3>AI & Intelligent Automation</h3>
+      <p>Unlock business insights and automate workflows with custom AI/ML models, computer vision, and NLP solutions.</p>
+    </article>
+
+    <article class="services-card">
+      <div class="services-media">
+        <img src="../images/Services Page/Agile Transformation.webp" alt=""/>
+      </div>
+      <h3>Agile Transformation</h3>
+      <p>Our transformation programs align people, process, and platforms to unlock innovation, improve delivery velocity, and scale agility across your organization.</p>
+    </article>
+
+    <article class="services-card">
+      <div class="services-media">
+        <img src="../images/Services Page/UI UX Design.webp" alt=""/>
+      </div>
+      <h3>UI & UX Design</h3>
+      <p>Transform ideas into intuitive, human-centered experiences - balancing creativity and usability for lasting customer engagement.</p>
+    </article>
+
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+
+<script>
+  fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer-placeholder").innerHTML = data;
+    })
+    .catch(error => console.error("Footer load error:", error));
+</script>
+
+
+<script src="js/index.js" defer></script>
+<script src="js/header.js" defer></script>
+
+</body>
+</html>

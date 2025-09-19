@@ -1,0 +1,42 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  color: #222;
+  background-position: bottom center;
+  min-height: 100vh;
+  background: url('../images/bg-pattern.png') center/cover no-repeat fixed;
+}
+
+/* Optional Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Optional: Prevent blur filter from affecting global body text unexpectedly */
+body.menu-open main,
+body.menu-open header {
+  filter: blur(4px);
+  pointer-events: none;
+}
+
+/* Performance boost: force GPU acceleration for animated elements */
+.hero,
+.about-image,
+.value-box-inner {
+  transform: translateZ(0);
+  will-change: transform, opacity;
+}
+
+
+#header-placeholder {
+  min-height: 70px; /* match your real header height */
+  background: #fff; /* optional – stops flicker */
+}

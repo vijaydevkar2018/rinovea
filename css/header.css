@@ -1,0 +1,166 @@
+/* ===== Base header ===== */
+.site-header {
+  background: #fff;
+  padding: 11px 40px;
+  box-shadow: 0 2px 5px rgba(0,0,0,.05);
+  position: relative;
+  z-index: 40;
+}
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.logo img { height: 70px; }
+
+/* ===== Desktop nav ===== */
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-links a {
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Mobile-first: hide nav links until menu is open */
+.nav-links {
+  display: none;
+}
+
+/* When active (mobile menu open) */
+.nav-links.active {
+  display: flex;
+  flex-direction: column;
+}
+
+/* On desktop (992px and up), always show links inline */
+@media (min-width: 992px) {
+  .nav-links {
+    display: flex;      /* show always */
+    flex-direction: row; /* horizontal layout */
+    gap: 20px;          /* space between items */
+  }
+
+  .mobile-menu-icon {
+    display: none; /* hide hamburger */
+  }
+}
+
+
+
+/* ===== Hamburger (hidden on desktop) ===== */
+.mobile-menu-icon {
+  display: none;            /* shown on mobile only */
+  flex-direction: column;
+  gap: 6px;
+  border: 0;
+  background: transparent;
+  padding: 6px;
+  cursor: pointer;
+}
+.mobile-menu-icon span {
+  width: 26px; height: 3px; background: #000; border-radius: 2px; display: block;
+}
+
+/* ===== Mobile layout ===== */
+@media (max-width: 768px) {
+  .mobile-menu-icon { display: flex; }
+  .nav-links {
+     display: none;               /* hidden until .nav.is-open */
+     position: absolute;
+     top: 100%;                   /* below header */
+     right: 16px;
+     left: 16px;
+     flex-direction: column;
+     gap: 14px;
+     padding: 16px;
+     background: #fff;
+     border: 1px solid #eee;
+     border-radius: 10px;
+     box-shadow: 0 8px 24px rgba(0,0,0,.12);
+     z-index: 2000; /* ensure menu is above hero/heading */
+  }
+  /* Open state: controlled by JS */
+  .nav.is-open .nav-links { display: flex; }
+
+  /* Touch-friendly padding */
+  .nav-links a { padding: 10px 6px; }
+}
+
+/* Nudge logo closer to the left on mobile */
+@media (max-width: 768px) {
+  .site-header {
+    /* top right bottom left */
+    padding: 12px 20px 12px 12px;  /* was 16px 40px; */
+  }
+
+  /* optional: ensure no extra spacing on the logo container */
+  .logo {
+    margin-left: 0;
+  }
+
+  /* optional: slightly smaller logo on mobile if needed */
+  .logo img {
+    height: 56px;
+  }
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background-color: #fff;
+}
+
+/* --- Force desktop-style header on phone landscape --- */
+@media (orientation: landscape) and (min-width: 720px) and (max-height: 500px) {
+  /* hide hamburger */
+  .mobile-menu-icon { display: none !important; }
+
+  /* show inline links like desktop */
+  .nav-links {
+    display: flex !important;
+    position: static !important;
+    flex-direction: row !important;
+    gap: 28px;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+
+  /* if you toggle a class like .active/.is-open, neutralize it */
+  .nav.is-open .nav-links,
+  .nav-links.active { display: flex !important; }
+}
+
+
+/* === Phone landscape: show desktop-style nav === */
+@media (orientation: landscape) and (max-width: 991.98px) {
+  .site-header { padding: 10px 16px; }
+  .logo img { height: 56px; }
+
+  /* hide hamburger */
+  .mobile-menu-icon { display: none !important; }
+
+  /* show inline links */
+  .nav-links {
+    display: flex !important;
+    position: static !important;
+    flex-direction: row !important;
+    gap: 22px;
+    padding: 0; margin: 0;
+    background: transparent; border: 0; box-shadow: none;
+    list-style: none;
+  }
+
+  /* keep text readable but compact if space is tight */
+  .nav-links a { font-size: 0.98rem; white-space: nowrap; }
+}

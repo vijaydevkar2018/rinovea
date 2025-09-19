@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Industries We Serve</title>
+
+  <!-- Your existing global styles (optional) -->
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="css/industries.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="icon" type="image/png" href="images/R-logo.png">
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <a class="logo" href="index.html" aria-label="Rinovea Home">
+        <img src="images/logo1.png" alt="Rinovea Logo" />
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <button
+          class="mobile-menu-icon"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+        >
+          <span></span><span></span><span></span>
+        </button>
+
+        <ul id="primary-nav" class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="career.html">Career</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="industries-page">
+        <header class="industries-hero">
+      <h1>Industries We Serve</h1>
+      <p>Driving innovation across finance, healthcare, logistics, education, SaaS, and smart cities with next-gen technology solutions.</p>
+    </header>
+
+    <!-- 
+    <nav class="industries-nav" aria-label="Industries">
+      <ul>
+        <li><a href="#healthcare">FinTech</a></li>
+        <li><a href="#bfsi">Healthcare</a></li>
+        <li><a href="#automotive">Logistics</a></li>
+        <li><a href="#manufacturing">EdTech</a></li>
+        <li><a href="#agtech">SaaS</a></li>
+        <li><a href="#retail">IoT</a></li>
+      </ul>
+    </nav>
+  -->
+
+    <section id="healthcare" class="industry-block">
+      <div class="ib-content">
+        <span class="ib-number">01</span>
+        <h2>FinTech &amp; Financial Services</h2>
+        <p>This industry leverages technology to transform financial activities such as lending, payments, investments, and compliance. Digital lending platforms simplify credit access, while payment solutions enable secure, fast transactions. Wealth management tools and regulatory compliance solutions enhance trust and financial inclusion</p>
+        <!--<a class="ib-link" href="contact.html">See Our Work →</a> -->
+      </div>
+      <div class="ib-media">
+        <img src="../images/industries/Fintech.webp" alt="Healthcare solutions"/>
+      </div>
+    </section>
+
+    <section id="bfsi" class="industry-block">
+      <div class="ib-content">
+        <span class="ib-number">02</span>
+        <h2>Healthcare &amp; HealthTech</h2>
+        <p>HealthTech integrates digital solutions into healthcare to improve patient care and system efficiency. From telemedicine and EHR systems to patient engagement platforms and wellness apps, it enhances accessibility, continuity, and personalization of care. It empowers both patients and providers with data-driven insights.</p>
+      
+      </div>
+      <div class="ib-media">
+        <img src="../images/industries/Healthcare.webp" alt="Banking & financial services"/>
+      </div>
+    </section>
+
+    <section id="automotive" class="industry-block">
+      <div class="ib-content">
+        <span class="ib-number">03</span>
+        <h2>Logistics &amp; Supply Chain</h2>
+        <p>This sector focuses on optimizing the movement, storage, and management of goods. Solutions like fleet tracking, warehouse automation, and demand forecasting improve efficiency, reduce costs, and ensure timely delivery. Technology-driven systems enhance visibility and resilience across supply chains.</p>
+        
+      </div>
+      <div class="ib-media">
+        <img src="../images/industries/logistics.webp" alt="Automotive software and IoT"/>
+      </div>
+    </section>
+
+    <section id="manufacturing" class="industry-block">
+      <div class="ib-content">
+        <span class="ib-number">04</span>
+        <h2>EdTech &amp; Learning Platforms</h2>
+        <p>EdTech modernizes education through digital tools that enhance learning experiences. Interactive platforms, assessment tools, and LMS systems make education more engaging, personalized, and accessible. It supports both traditional institutions and lifelong learners in adapting to evolving knowledge needs.</p>
+       
+      </div>
+      <div class="ib-media">
+        <img src="../images/industries/Edutech.webp" alt="Manufacturing systems"/>
+      </div>
+    </section>
+
+    <section id="agtech" class="industry-block">
+      <div class="ib-content">
+        <span class="ib-number">05</span>
+        <h2>Enterprise SaaS</h2>
+        <p>Enterprise SaaS provides cloud-based applications to streamline business operations. Workflow automation, productivity tools, and AI-powered platforms help organizations improve efficiency, collaboration, and decision-making. Its scalable model reduces infrastructure costs while enabling innovation.</p>
+        
+      </div>
+      <div class="ib-media">
+        <img src="../images/industries/Saas.webp" alt="Agritech platforms"/>
+      </div>
+    </section>
+
+    <section id="retail" class="industry-block">
+      <div class="ib-content">
+        <span class="ib-number">06</span>
+        <h2>Smart Cities &amp; IoT</h2>
+        <p>Smart Cities leverage IoT to create connected, sustainable urban environments. Sensor-based solutions, energy management systems, and intelligent infrastructure improve quality of life, safety, and resource efficiency. This industry drives data-driven urban planning and citizen-centric services.</p>
+        
+      </div>
+      <div class="ib-media">
+        <img src="../images/industries/IoT.webp" alt="Retail & e-commerce"/>
+      </div>
+    </section>
+  </main>
+
+    <!-- Load Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts to load header & footer -->
+  <script>
+    fetch("footer.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("footer-placeholder").innerHTML = data)
+      .catch(err => console.error("Footer load error:", err));
+  </script>
+  
+
+  <!-- Your existing scripts (header/footer loader, etc.) -->
+  <script src="js/index.js"></script>
+  <script src="js/header.js" defer></script>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+</body>
+</html>

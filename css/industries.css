@@ -1,0 +1,211 @@
+
+/* ---------- Variables ---------- */
+:root{
+  --brand-navy:   #0c2340;
+  --brand-orange: #f95e27;
+
+  /* if your site has a fixed header, set its height here for anchor offset */
+  --header-height: 72px;
+}
+
+/* Smooth anchor scrolling */
+html { scroll-behavior: smooth; }
+
+/* Page shell */
+.industries-page{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: clamp(32px, 5vw, 64px) 16px;
+}
+
+.industries-hero {
+  text-align: center;
+  margin-bottom: clamp(24px, 4vw, 40px);
+  position: relative; /* Add position relative to manage z-index stacking */
+  z-index: 1; /* Lower z-index so it stays under the menu */
+}
+
+/* ---------- Sticky tabs (top names) ---------- */
+.industries-nav{
+  position: sticky;
+  top: calc(var(--header-height) + 8px); /* keeps under your site header */
+  z-index: 3;
+  background: #fff;
+  padding: 10px 0;
+  border-bottom: 1px solid #eef2f7;
+}
+
+.industries-nav ul{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.industries-nav a{
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: #f5f7fb;
+  color: var(--brand-navy);
+  text-decoration: none;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+.industries-nav a:hover{ transform: translateY(-1px); }
+
+/* Optional CSS-only "active" highlight (modern browsers) */
+:root:has(#healthcare:target)   .industries-nav a[href="#healthcare"],
+:root:has(#bfsi:target)         .industries-nav a[href="#bfsi"],
+:root:has(#automotive:target)   .industries-nav a[href="#automotive"],
+:root:has(#manufacturing:target).industries-nav a[href="#manufacturing"],
+:root:has(#agtech:target)       .industries-nav a[href="#agtech"],
+:root:has(#retail:target)       .industries-nav a[href="#retail"]{
+  background: var(--brand-navy);
+  color: #fff;
+}
+
+/* ---------- Sections (alternate text ↔ image) ---------- */
+.industry-block{
+  display: flex;                               /* was grid */
+  gap: clamp(24px, 4vw, 48px);
+  align-items: stretch;                         /* equal heights */
+  padding: clamp(32px, 6vw, 72px) 0;
+  border-bottom: 1px solid #f0f3f8;
+  min-height: clamp(320px, 32vw, 460px);
+  scroll-margin-top: calc(var(--header-height) + 80px);
+}
+
+/* Alternate layout on even sections */
+.industry-block:nth-of-type(even) .ib-content{ order: 2; }
+.industry-block:nth-of-type(even) .ib-media  { order: 1; }
+
+/* Text styles */
+.ib-content h2{
+  color: var(--brand-navy);
+  margin: 0 0 10px;
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+}
+
+.ib-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ib-content p{
+  color: #475569;
+  line-height: 1.65;
+  margin: 0 0 14px;
+}
+.ib-link{
+  color: var(--brand-orange);
+  font-weight: 600;
+  text-decoration: none;
+}
+.ib-link:hover{ text-decoration: underline; }
+
+.ib-media{
+  height: 100%;
+  border-radius: 16px;            /* card feel like your reference */
+  overflow: hidden;               /* clip image corners */
+  box-shadow: 0 8px 28px rgba(0,0,0,.08);
+}
+
+/* Image styles */
+.ib-media img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover; 
+  border-radius: 16px;
+  box-shadow: 0 8px 28px rgba(0,0,0,.08);
+}
+
+/* Large faded section numbers */
+.ib-number {
+  display: block;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 800;
+  color: rgba(33, 109, 202, 0.15); /* navy but very light for white theme */
+  line-height: 1;
+  margin-bottom: 6px;
+  position: relative;
+  z-index: 0; /* behind heading/text */
+}
+
+.ib-content h2 {
+  position: relative;
+  z-index: 1;
+}
+
+/* Mobile: stack content first, then image */
+@media (max-width: 900px){
+  .industry-block{
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "content"
+      "media";
+    align-items: start;           /* let each stack to natural height */
+    min-height: unset;            /* remove desktop min-height if you prefer */
+    gap: 20px;
+  }
+  .industry-block .ib-content{ grid-area: content; }
+  .industry-block .ib-media{   grid-area: media;  }
+
+  .ib-media{ height: auto; }
+  .ib-media img{ height: auto; }
+}
+
+@media (max-width: 768px) {
+  .industry-block {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .industry-block .ib-content {
+    order: 1 !important; /* text first */
+    padding-left: 16px;  /* add left spacing */
+    padding-right: 16px; /* optional: balance on both sides */
+  }
+
+  .industry-block .ib-media {
+    order: 2 !important; /* image second */
+    width: 100%;
+    height: auto;
+  }
+
+  .ib-media img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+
+  .ib-number {
+    font-size: clamp(2.5rem, 12vw, 4rem);
+    margin-bottom: 10px;
+    color: rgba(12, 35, 64, 0.12);
+  }
+}
+
+#hero-bg { position:absolute; inset:0; z-index:0; }
+#hero-bg canvas { width:100% !important; height:100% !important; opacity:.55; } /* tweak opacity if needed */
+.hero-container{ position:relative; z-index:1; }
+
+/* Mobile Menu */
+@media only screen and (max-width: 768px) {
+  .mobile-menu {
+    position: relative;
+    z-index: 9999;  /* Higher z-index to make sure it appears above hero */
+  }
+
+  .industries-nav {
+    position: relative;  /* Ensures it sticks properly */
+    z-index: 9998;  /* Make sure sticky navigation stays below mobile menu */
+  }
+}

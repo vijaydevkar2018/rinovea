@@ -1,0 +1,538 @@
+.about-intro {
+  background-color: #fff;
+  padding: 60px 20px;
+}
+
+.about-intro-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.about-intro-left {
+  flex: 1;
+}
+
+.about-intro-left h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0c2340;
+  line-height: 1.3;
+}
+
+.about-intro-left .highlight {
+  color: #f95e27; /* Orange highlight */
+}
+
+.about-intro-right {
+  flex: 1;
+  border-left: 3px solid #40A5A6;
+  padding-left: 20px;
+}
+
+.about-intro-right p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/*
+.typed-slot { display: inline-block; white-space: nowrap; }
+.slot-exp { width: 8ch; text-align: left;}      
+.slot-inv { width: 10ch; text-align: left;}     
+
+.ampersand { display: inline-block; width: 1ch; text-align: center; color: #0c2340; margin-right: 1ch; }
+*/
+
+.typed-slot { display: inline-block; white-space: nowrap; }
+.slot-exp { width: 8ch; text-align: left; }      
+.slot-inv { width: 10ch; text-align: left; }     
+
+.ampersand {
+  display: inline-block;
+  color: #0c2340;
+  font-weight: inherit;
+}
+
+.ampersand::before,
+.ampersand::after {
+  content: "\00a0"; /* non-breaking space before & after */
+}
+
+/* Target Safari/MacBook to adjust spacing */
+@supports (-webkit-touch-callout: none) {
+  .ampersand {
+    margin-right: 0.5ch; /* Reduce margin slightly for Safari */
+  }
+}
+
+/* Highlight color stays the same as before */
+.highlight { color: #f95e27; }
+
+/* Blinking caret shown only while typing/erasing */
+.type-caret::after {
+  content: "|";
+  display: inline-block;
+  margin-left: 2px;
+  animation: blink 1s steps(1, end) infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-intro-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .about-intro-right {
+    border-left: none;
+    padding-left: 0;
+    border-top: 3px solid #40A5A6;
+    padding-top: 20px;
+  }
+}
+
+/* Force spacing before ampersand only on Safari */
+@supports (-webkit-touch-callout: none) {
+  .ampersand {
+    margin-left: 0.5ch; /* Adjust the spacing value as needed */
+  }
+}
+
+
+
+.about-hero {
+  width: 100%;
+  margin: 24px 0 0;          /* space above; tweak to match your layout */
+  overflow: hidden;           /* hide any image overflow on small screens */
+}
+
+.about-hero picture,
+.about-hero img {
+  display: block;
+  width: 100%;
+  height: auto;               /* keep natural aspect ratio */
+}
+
+.about-hero { position: relative; }
+.about-hero::after{
+  content:"";
+  position:absolute; inset:0;
+  background: linear-gradient(to bottom, rgba(0,123,137,0.05), rgba(0,123,137,0.05));
+  pointer-events:none;
+}
+
+
+/* Responsive */
+@media (max-width: 992px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .stats-grid { grid-template-columns: 1fr; } }
+
+/* Layout */
+.vm-section {
+  padding: 56px 20px;
+}
+.vm-row {
+  max-width: 1200px;
+  margin: 0 auto 48px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 36px;
+  align-items: center;
+}
+.vm-row-reverse { grid-template-columns: 1fr 1.2fr; }
+.vm-row-reverse > .vm-text { order: 2; }
+.vm-row-reverse > .vm-media { order: 1; }
+
+.vm-text h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0c2340;
+  margin-bottom: 14px;
+}
+.vm-text p {
+  position: relative;
+  color: #2b3a4a;
+  line-height: 1.7;
+  padding-left: 18px;
+}
+.vm-text p::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 6px; bottom: 6px;
+  width: 3px;
+  background: #40A5A6;       /* teal accent line */
+  border-radius: 2px;
+}
+
+.vm-media img {
+  display: block;
+  width: 100%;
+  height: 360px;             /* crop for a premium look */
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.08);
+}
+
+/* Animations */
+.fade-slide {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .6s ease-out, transform .6s ease-out;
+}
+.fade-slide.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.zoom-fade {
+  opacity: 0;
+  transform: scale(.96);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.zoom-fade.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .fade-slide, .zoom-fade {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .vm-row,
+  .vm-row-reverse {
+    grid-template-columns: 1fr;
+  }
+  .vm-row-reverse > .vm-text,
+  .vm-row-reverse > .vm-media {
+    order: initial;
+  }
+  .vm-media img { height: 300px; }
+}
+@media (max-width: 560px) {
+  .vm-media img { height: 240px; }
+}
+
+
+/* ---------- Section shell ---------- */
+.team-section {
+  padding: 15px;
+  text-align: center;
+}
+.team-title {
+  font-size: 1.8rem;
+  color: #0c2340;
+  margin-bottom: 6px;
+  font-weight: 800;
+}
+.team-subtitle {
+  color: #64748b;
+  margin-bottom: 28px;
+}
+
+/* ---------- Grid ---------- */
+.team-grid{
+  max-width:1200px; margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0,1fr));
+  gap:24px;
+  justify-content:center;   /* centers the tracks */
+  justify-items:center;     /* centers the card in its cell */
+}
+
+@media (max-width: 960px) { .team-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 640px) { .team-grid { grid-template-columns: 1fr; } }
+
+/* ---------- Card ---------- */
+.team-card {
+  position: relative;
+  height: 440px;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #F8F9FB;
+  box-shadow: 0 10px 28px rgba(0,0,0,.18);
+  isolation: isolate;                 /* keep overlay effects inside */
+  grid-column:2;
+}
+
+/* Photo */
+.team-media {
+  position: absolute; inset: 0;
+  background-image: var(--photo);
+  background-size: cover;
+  background-position: center;
+  filter: saturate(1.05);
+  transform: translateZ(0);
+}
+
+/* ---------- Bottom overlay (initial) → full overlay (hover) ---------- */
+.team-overlay {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 34%;
+  display: grid;
+  grid-template-rows: auto 0fr;
+  gap: 14px;
+  padding: 22px 22px 24px;
+  text-align: left;
+  color: #fff;
+  transition: height .45s ease, grid-template-rows .45s ease;
+  
+  background: linear-gradient(
+    to top,
+    rgba(0, 87, 183, 0.9) 0%,    /* deep blue */
+    rgba(0, 87, 183, 0.7) 40%,
+    rgba(0, 87, 183, 0) 100%     /* transparent */
+  );
+
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+}
+
+/* Grid lines (like your 3rd image) appear only when expanded */
+.team-overlay::before {
+  content:"";
+  position:absolute; inset:0;
+  border-radius: inherit;
+  opacity: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);
+  background-size: 36px 36px, 36px 36px;
+  transition: opacity .45s ease;
+  pointer-events: none;
+  mix-blend-mode: lighten;
+}
+
+/* Name + role block (always visible) */
+.team-info { z-index: 1; }
+.member-name {
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: .2px;
+  margin: 0 0 6px 0;
+}
+.member-role {
+  margin: 0;
+  font-size: .95rem;
+  font-weight: 500;
+  color: var(--accent);               /* role color = overlay accent */
+  opacity: .95;
+}
+
+/* Bio (only when expanded) */
+.team-bio {
+  overflow: hidden;                   /* hidden until expanded */
+  z-index: 1;
+  color: rgba(255,255,255,.92);
+  line-height: 1.65;
+  font-size: .98rem;
+}
+
+.team-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.team-overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.team-info {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.team-bio {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+.team-card:hover .team-info {
+  transform: translateY(-20px); /* move name/role up */
+}
+
+.team-card:hover .team-bio {
+  max-height: 300px; /* set large enough so all text fits */
+  opacity: 1;
+}
+
+/* ---------- Hover state ---------- */
+.team-card:hover .team-overlay {
+  height: 100%;
+  background: linear-gradient(
+    to top,
+    rgba(0, 87, 183, 0.9) 0%, 
+    rgba(0, 87, 183, 0.7) 40%,
+    rgba(0, 87, 183, 0) 100%
+  );
+}
+
+.team-card:hover .team-overlay::before {
+  opacity: .75;                       /* show grid texture */
+}
+
+/* Subtle lift on hover */
+.team-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 34px rgba(0,0,0,.22);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+/* Accessibility: no motion */
+@media (prefers-reduced-motion: reduce) {
+  .team-card, .team-overlay { transition: none !important; }
+  .team-card:hover { transform: none; }
+}
+
+/* Only apply hidden state when JS is available */
+.js .reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 3s ease, transform 3s ease;
+  will-change: opacity, transform;
+}
+.js .reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.js .team-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 3s ease, transform 3s ease;
+}
+.js .reveal-on-scroll.is-visible .team-card { opacity: 1; transform: none; }
+.js .reveal-on-scroll.is-visible .team-card:nth-child(1) { transition-delay: .12s; }
+.js .reveal-on-scroll.is-visible .team-card:nth-child(2) { transition-delay: .24s; }
+.js .reveal-on-scroll.is-visible .team-card:nth-child(3) { transition-delay: .36s; }
+
+.team-section.reveal-on-scroll { opacity: 1 !important; transform: none !important; }
+
+.team-section.reveal-on-scroll { 
+  opacity: 1 !important; 
+  transform: none !important; 
+}
+
+.team-grid { 
+  justify-content: center; 
+  justify-items: center;   
+}
+.team-card { 
+  grid-column: 2;   
+  min-height: 440px;         
+  width: min(420px, 92vw);   
+}
+
+@media (max-width: 960px){ .team-card { grid-column: 1 / -1; } }
+@media (max-width: 640px){ .team-card { grid-column: auto; } }
+
+.about-intro-left h2 {
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  line-height: 1.3;
+}
+
+/* Force spacing before ampersand only on Safari */
+@supports (-webkit-touch-callout: none) {
+  .slot-exp::after {
+    content: "\00a0";  /* non-breaking space */
+  }
+}
+
+/* Founder Section */
+.founder-section {
+  padding: 0px 20px;
+  text-align: center;
+}
+
+.founder-heading {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #0c2340;
+  margin-bottom: 8px;
+}
+
+.founder-subheading {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.founder-insight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  gap: 60px;
+  text-align: center;
+}
+
+.founder-left {
+  flex: 0 0 auto;
+  text-align: center;
+}
+
+.founder-photo img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;  /* circle photo */
+  object-fit: cover;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.member-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-top: 16px;
+  margin-bottom: 4px;
+  color: #0c2340;
+}
+
+.member-role {
+  font-size: 1rem;
+  font-weight: 500;
+  color: black;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.founder-message {
+  flex: 1;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #2b3a4a;
+  text-align: left;
+  max-width: 700px;
+  margin-top: -90px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .founder-insight {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .founder-message {
+    text-align: center;
+    max-width: 90%;
+    margin-top: 0px;
+  }
+}

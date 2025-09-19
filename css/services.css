@@ -1,0 +1,236 @@
+/* ===== Services Section (cards below hero) ===== */
+.services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+  padding-block: clamp(20px, 5vw, 60px);
+  padding-inline: clamp(16px, 5vw, 56px);
+}
+
+.services-heading {
+  font-size: 2rem;
+  color: #0c2340;
+}
+
+.services-grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  padding-top: 20px;
+  padding-bottom: 30px;
+
+  max-width: 1600px;   /* keeps layout consistent with other pages */
+  margin: 0 auto;      /* centers the grid */
+  padding-inline: 0px; /* add breathing space on left & right */
+}
+
+
+/* ===== Card styling ===== */
+.services-card {
+  position: relative;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+  overflow: hidden;
+  transform: translateY(6px);
+  transition: transform .35s ease, box-shadow .35s ease;
+  
+}
+
+.services-card::after {
+  content:"";
+  position:absolute; inset:0;
+  border-radius: 14px;
+  pointer-events:none;
+  background: radial-gradient(120% 60% at 50% 0%, rgba(29,78,216,.12), transparent 60%),
+              radial-gradient(120% 60% at 50% 100%, rgba(14,165,233,.12), transparent 60%);
+  opacity: 0; transition: opacity .35s ease;
+}
+
+.services-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(0,0,0,.12);
+}
+.services-card:hover::after{ opacity: 1; }
+
+/* Media (image) */
+.services-media {
+  aspect-ratio: 16 / 10; 
+  overflow: hidden; 
+  position: relative;
+}
+.services-media img {
+  width: 100%; height: 100%; 
+  object-fit: cover;
+  transform: scale(1.02);
+  transition: transform .8s ease;
+  will-change: transform;
+}
+.services-card:hover .services-media img { transform: scale(1.08); }
+
+.services-media::before {
+  content:""; 
+  position:absolute; inset:0;
+  background: linear-gradient(to top, rgba(0,0,0,.28), transparent 60%);
+  opacity:.6; 
+  mix-blend-mode: multiply; 
+  pointer-events:none;
+}
+
+/* Text */
+.services-card h3 {
+  margin:14px 18px 6px;
+  font-size: 1.15rem;
+  line-height: 1.35;
+}
+.services-card p {
+  margin:0 18px 12px;
+  color:#334155;
+}
+
+
+.services-hero {
+  position: relative;
+  width: 100%;
+  height: 50vh; /* adjust height */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0px;
+}
+
+.services-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.services-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55); /* dark overlay */
+}
+
+.services-hero-text {
+  position: absolute;
+  text-align: center;
+  color: #fff;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.services-hero-text h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.services-hero-text p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+/* Zoom effect on hover */
+.services-hero-img {
+  transition: transform 0.6s ease;
+}
+
+.services-hero:hover .services-hero-img {
+  transform: scale(1.05);
+}
+
+/* ===== Responsiveness ===== */
+@media (max-width: 992px) {
+  .services-hero {
+    height: 45vh; /* shorter hero */
+  }
+  .services-hero-text h2 {
+    font-size: 2rem;
+  }
+  .services-hero-text p {
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .services-hero {
+    height: 40vh; /* tighter hero on small screens */
+  }
+  .services-hero-text {
+    padding: 0 12px;
+  }
+  .services-hero-text h2 {
+    font-size: 1.6rem;
+  }
+  .services-hero-text p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+}
+
+/* Existing */
+@media (max-width: 992px) {
+  .services-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .services-grid { grid-template-columns: 1fr; }
+}
+
+/* Extra breakpoints */
+
+/* Large laptops & wide monitors */
+@media (min-width: 1200px) {
+  .services-grid {
+    max-width: 1280px;   /* cards don’t stretch too wide */
+    gap: 24px;
+  }
+  .services-card h3 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Tablets & iPad landscape (<=820px) */
+@media (max-width: 820px) {
+  .services-card {
+    max-width: 360px;
+    margin: 0 auto;
+  }
+  .services-card h3 {
+    font-size: 1.05rem;
+  }
+  .services-card p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Small phones like iPhone SE, Pixel 4a (<=480px) */
+@media (max-width: 480px) {
+  .services {
+    padding-inline: 12px;
+  }
+  .services-card {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+  .services-card h3 {
+    font-size: 1rem;
+  }
+  .services-card p {
+    font-size: 0.85rem;
+    line-height: 1.35;
+  }
+}
+
+/* Very small phones (<=360px) */
+@media (max-width: 360px) {
+  .services-card h3 {
+    font-size: 0.95rem;
+  }
+  .services-card p {
+    font-size: 0.8rem;
+  }
+}
+

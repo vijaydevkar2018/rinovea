@@ -1,0 +1,381 @@
+html, body {
+  overflow-x: hidden;
+}
+
+.cta-section {
+  width: 100%;
+  position: relative;
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;              /* Prevent overflow */
+  z-index: 1;
+}
+
+.cta-background {
+  position: absolute;
+  inset: 0; /* shorthand for top: 0; left: 0; right: 0; bottom: 0 */
+  background-image: url('../images/audience 1.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.cta-overlay {
+  background-color: rgba(0, 123, 137, 0.6);  /* Transparent blue */
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: #fff;
+  padding: 70px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-heading {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.cta-subheading {
+  font-size: 16px;
+  margin-bottom: 25px;
+  font-weight: 300;
+}
+
+.cta-button {
+  padding: 12px 30px;
+  border: 2px solid #fff;
+  background: transparent;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #fff;
+  color: #007a7a;
+}
+
+/* footer.css */
+.footer {
+  background-color: #f8f9fa;
+  padding: 40px 20px;
+  font-family: sans-serif;
+  color: #496179;
+}
+
+.footer-container {
+  display: flex;
+  text-align: left;              /* Align text to left */
+  flex-wrap: wrap;
+  justify-content: space-between;   /* Shift children to the left */
+  max-width: 1200px;
+  margin-left: 0;                /* Align to left */
+  margin-right: auto;
+  padding: 40px 20px;
+  gap: 40px;
+  box-sizing: border-box; 
+  margin: 0 auto;
+}
+
+.footer-column {
+  flex: 1 1 200px;
+}
+
+.footer-column h4 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 17px;
+  font-size: 14px;
+}
+
+.footer-logo {
+  max-width: 150px;
+  margin-bottom: 10px;
+}
+
+.contact-info li {
+  font-size: 14px;
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a {
+  margin-right: 10px;
+  font-size: 18px;
+  text-decoration: none;
+  color: #007b8b;
+}
+
+.footer-bottom {
+  margin-top: -10px;
+  padding: 10px; /* shorthand, same padding left & right */
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 25px;
+  width: 100%;
+  box-sizing: border-box; 
+  margin: 0 auto;
+}
+
+.newsletter {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.newsletter input[type="email"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  min-width: 250px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.newsletter button {
+  padding: 10px 20px;
+  background-color: #f15a29;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.footer-links {
+  display: flex;
+  gap: 15px;
+  font-size: 14px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #333;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-column ul li a {
+  color: #496179; /* Dark gray (same as other text) */
+  text-decoration: none; /* Remove underline */
+  font-weight: 500;
+}
+
+.footer-column ul li a:hover {
+  text-decoration: underline; /* Optional: Add underline on hover */
+}
+
+
+
+@media (max-width: 768px) {
+  /* Reduce top/bottom padding so logo and text are closer */
+  .cta-overlay {
+    padding: 70px 15px; /* was 70px 20px */
+  }
+
+  .cta-heading {
+    font-size: 22px; /* slightly smaller text for mobile */
+    margin-bottom: 6px; /* was 10px */
+  }
+
+  .cta-subheading {
+    font-size: 14px;
+    margin-bottom: 15px; /* was 25px */
+  }
+
+  .cta-button {
+    padding: 10px 24px;
+    font-size: 14px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .footer-bottom {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+    align-items: center; /* ensures centering */
+  }
+
+  .newsletter {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .footer-links {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    justify-content: center;     /* Center items */
+    text-align: center;          /* Center text */
+    margin-left: auto;           /* Override any left alignment */
+    margin-right: auto;
+    padding: 20px;               /* Reduce padding for smaller screens */
+  }
+
+  .footer-column {
+    align-items: center;
+  }
+}
+
+
+.footer-divider {
+  color: #999;
+}
+
+.footer-links {
+  display: flex;
+  gap: 10px;
+  font-size: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-links span,
+.footer-links a {
+  white-space: nowrap;
+}
+
+
+@media (max-width: 768px) {
+  .footer-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+}
+
+
+
+.icon {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.footer-social {
+  margin-top: 10px;
+  margin-left: 20px; /* aligns with logo */
+}
+
+.footer-social h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  margin-left: 5px; /* fine-tune alignment */
+    color: #496179;
+}
+
+.footer-social ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;   /* <-- Adjust spacing here */
+}
+
+.footer-social ul li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.footer-social ul li a {
+  text-decoration: none;
+  font-size: 0.90rem;
+  color: #496179; 
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease;
+}
+
+.footer-social ul li a i {
+  font-size: 1.2rem;
+  color: #2b9aaa; /* teal shade for icons */
+}
+
+.footer-social ul li a:hover {
+  color: #007ACC;
+}
+
+/* Mobile View Centering */
+@media (max-width: 768px) {
+  .footer-social {
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .footer-social ul {
+    display: inline-block;   /* makes the list act like centered block */
+    text-align: left;        /* keep icon + text aligned left inside block */
+  }
+
+  .footer-social ul li {
+    justify-content: center; /* centers each item horizontally */
+    margin: 10px 0;          /* adds spacing between items */
+  }
+}
+
+.footer-copy {
+  font-size: 15px;
+  color: #496179;
+}
+
+/* Safari-only fix */
+@supports (-webkit-touch-callout: none) {
+  .footer-container,
+  .footer-bottom {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.footer-container,
+.footer-bottom {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+@supports (-webkit-touch-callout: none) {
+  .footer-container,
+  .footer-bottom {
+    margin: 0 auto !important;
+  }
+}

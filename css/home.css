@@ -1,0 +1,1281 @@
+html, body {
+  overflow-x: hidden;
+}
+
+.hero {
+  text-align: center;
+  max-width: 100%;
+  background: #f9fbff;
+  padding: 0;
+  position: relative;
+}
+
+:root{
+  --brand-navy:   #0c2340;
+  --brand-orange: #f95e27;
+  --hero-bg:      #fcfcfc; /* near-white */
+}
+
+.hero {
+  position: relative;
+  min-height: clamp(520px, 70vh, 760px);
+  overflow: hidden;
+  background: var(--hero-bg);
+  display: grid;
+  place-items: center;
+  padding: clamp(48px, 8vw, 80px) 16px;
+}
+
+#hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0; /* behind content */
+}
+
+.hero-container {
+  position: relative;
+  z-index: 1;  /* above Vanta */
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--brand-navy);
+}
+
+.hero-container h2 { color: var(--brand-orange); }
+
+.hero .btn-outline{ border-color: var(--brand-navy); color: var(--brand-navy); }
+.hero .btn-outline:hover{ background: var(--brand-navy); color:#fff; }
+.hero .btn-primary{ background: var(--brand-orange); color:#fff; }
+.hero .btn-primary:hover{ background:#d94e1f; }
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;     /* let content decide height */
+    padding: 32px 5px;   /* reduce top/bottom padding */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: auto;
+    padding: 24px 12px;
+  }
+}
+
+
+#hero-bg canvas {
+  opacity: 0.3; /* 0 = invisible, 1 = solid */
+}
+
+.hero-container h1 {
+  font-size: 1.8rem;
+  color: #09356a;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.hero-container h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #f95e27; /* orange */
+  margin-bottom: 18px;
+}
+
+
+.hero-container p {
+  color: #5a5a5a;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 12px 24px;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: 0.3s ease;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background-color: #f95e27;
+  color: #fff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #d94e1f;
+}
+
+.btn-outline {
+  border: 2px solid #0c2340;
+  color: #0c2340;
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background-color: #0c2340;
+  color: #fff;
+}
+
+.hero-image {
+  margin-top: 40px;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .mobile-menu-icon {
+    display: flex;
+  }
+
+  .hero-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+}
+
+.about-section {
+  width: 100%;
+  padding: 80px 40px;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-tag {
+  display: inline-block;
+  background-color: #e7f3f8;
+  color: #40A5A6;
+  font-size: 0.9rem;
+  padding: 6px 12px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.about-text h2 {
+  font-size: 1.7rem;
+  color: #f95e27;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 30px;
+  max-width: 600px;
+}
+
+.about-image {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/*
+.about-image video {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.about-image video {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  object-fit: cover;
+  filter: brightness(1.1); 
+}
+
+.about-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.50);
+  border-radius: 6px;
+}*/
+
+.about-image { position: relative; }
+
+.about-image.no-overlay::after { display: none; } /* don't tint the Lottie */
+
+#about-lottie {
+  width: 100%;
+  aspect-ratio: 16/9;
+  display: block;
+  max-height: 700px;  /* prevents it from growing too tall */
+}
+
+@media (max-width: 768px) {
+  #about-lottie {
+    aspect-ratio: 4/3;
+    max-height: 400px;
+  }
+}
+
+.hero-typing {
+  font-size: 2.2rem;    
+  font-weight: 700;       
+  color: #0c2340;         
+  text-align: center;
+  min-height: 3.2em; 
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.3;
+  gap: 0.06em; 
+  height: auto;      
+  overflow: visible; 
+}
+
+.hero-typing br { display: none; }
+
+.hero-typing .typed-line {
+  display: block;
+}
+.hero-container h1 { margin-bottom: 14px; }
+
+.typed-line {
+  display: block;
+  line-height: 1.2;
+}
+
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+
+#intro-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 20px; /* adjust distance from edge */
+  align-items: center;
+  overflow: hidden;
+}
+
+.intro-logo {
+  height: 80px;
+  margin-bottom: 30px;
+  opacity: 0;
+}
+
+.intro-words {
+  display: flex;
+  gap: 15px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  opacity: 0;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .intro-words {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-words {
+    gap: 12px;              /* smaller gap so words fit */
+    flex-wrap: wrap;        /* allow words to break to next line if needed */
+    justify-content: flex-start; /* align left instead of full center */
+    padding-left: 10px;     /* small padding from the left edge */
+    font-size: 1.0rem;
+  }
+
+  .intro-logo {
+    height: 60px; /* slightly smaller logo on small screens */
+  }
+}
+
+
+.word {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.value-section {
+  text-align: center; 
+  padding-inline: clamp(16px, 5vw, 30px);   /* left & right */
+  padding-block: clamp(40px, 7vw, 80px); 
+}
+
+.section-heading {
+  font-size: 2.0rem; 
+  color: #0c2340; 
+  margin-bottom: 40px; 
+}
+
+.value-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 0; 
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.value-card {
+  position: relative;
+  width: 100%;    
+  height: 500px;         
+  background-size: cover;
+  background-position: center;
+  border-radius: 0;     
+  overflow: hidden;
+  cursor: pointer;
+  flex: 1;     
+  transition: all 0.3s ease-in-out;
+}
+
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(0px);
+  transition: all 0.3s ease-in-out;
+  z-index: 1;
+}
+
+.card-info {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 16px;
+  border-radius: 8px;
+  opacity: 0;
+  z-index: 2;
+  max-width: 80%;
+  transition: opacity 0.3s ease;
+}
+
+.value-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+  color: #0c2340;
+}
+
+.value-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.value-card:hover .card-overlay {
+  background: transparent;
+  backdrop-filter: none;
+}
+
+.value-card:hover .card-info {
+  opacity: 1;
+}
+
+/* Mobile responsiveness for What Sets Us Apart section */
+@media (max-width: 768px) {
+  .value-cards {
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px; /* spacing between cards */
+    padding: 0 10px;
+  }
+
+  .value-card {
+    width: 100%;
+    height: auto; /* let height adjust naturally */
+    min-height: 250px;
+  }
+
+  .card-info-box {
+    width: 100%;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+}
+
+.card-info-box {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80%;
+  background: white;
+  padding: 20px;
+  border-top-right-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 2;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.info-text h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #000;
+  margin: 0 0 8px 0;
+}
+
+.info-text p {
+  font-size: 0.9rem;
+  color: #333;
+  margin: 0;
+}
+
+.info-action {
+  margin-top: 12px;
+  font-size: 1.2rem;
+  color: #007bff;
+  align-self: flex-end;
+}
+
+.value-card:hover .card-info-box {
+  opacity: 1;
+}
+
+.card-overlay {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(0.5px);
+  transition: all 0.3s ease-in-out;
+  z-index: 1;
+}
+
+.value-card:hover .card-overlay {
+  background: transparent;
+  backdrop-filter: none;
+}
+
+.card-info-box {
+  transform: translateY(20px);
+}
+
+.value-card:hover .card-info-box {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.industries-row{
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 6px 0 12px;
+}
+
+.industries-row::-webkit-scrollbar{ height: 8px; }
+.industries-row::-webkit-scrollbar-thumb{ background:#0d47a1; border-radius:6px; }
+.industries-row::-webkit-scrollbar-track{ background:#eee; }
+
+.industries-row .ind-card{
+  position: relative;
+  display: block;
+  flex: 0 0 280px;
+  height: 340px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--bg, url('images/fallback.jpg')) center/cover no-repeat;
+  scroll-snap-align: start;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+  transition: transform .28s ease, box-shadow .28s ease;
+  isolation: isolate;
+}
+.industries-row .ind-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0,0,0,.14);
+}
+
+/* legibility fade */
+.industries-row .ind-card::before{
+  content:"";
+  position:absolute; inset:0;
+  background: linear-gradient(to top, rgba(0,0,0,.25) 12%, rgba(0,0,0,0) 45%);
+  z-index:1; pointer-events:none;
+}
+
+/* 🔵 blue gradient only on hovered card */
+.industries-row .ind-card::after{
+  content:"";
+  position:absolute; inset:0;
+  background: linear-gradient(to top, rgba(13,71,161,.95) 0%, rgba(13,71,161,0) 50%);
+  transform: translateY(100%);
+  transition: transform .45s ease;
+  z-index:2; pointer-events:none;
+}
+.industries-row .ind-card:hover::after{ transform: translateY(50%); }
+
+.industries-row .ind-name{
+  position:absolute; left:16px; right:16px; bottom:14px;
+  margin:0; color:#fff; z-index:3;
+  font-size:1.1rem; font-weight:800; line-height:1.3;
+  text-shadow: 0 2px 6px rgba(0,0,0,.45);
+}
+
+/* Ensure gradient-only on hovered card & correct stacking */
+.industries-section .industries-row .ind-card{ position:relative; overflow:hidden; }
+.industries-section .industries-row .ind-card::before{
+  content:""; position:absolute; inset:0;
+  background: linear-gradient(to top, rgba(0,0,0,.25) 12%, rgba(0,0,0,0) 45%);
+  z-index:1; pointer-events:none;
+}
+.industries-section .industries-row .ind-card::after{
+  content:""; position:absolute; inset:0;
+  background: linear-gradient(to top, rgba(13,71,161,.95) 0%, rgba(13,71,161,0) 50%);
+  transform: translateY(100%);
+  transition: transform .45s ease;
+  z-index:2; pointer-events:none;
+}
+.industries-section .industries-row .ind-card:hover::after{
+  transform: translateY(50%);
+}
+.industries-section .industries-row .ind-name{
+  position:absolute; left:16px; right:16px; bottom:14px;
+  z-index:3; color:#fff; font-weight:800; text-shadow:0 2px 6px rgba(0,0,0,.45);
+}
+
+/* Industries autoplay: no snap while it scrolls itself */
+.industries-v2 .iv2-row { scroll-snap-type: none; }
+
+/* Center container under cards */
+.industries-v2 .iv2-actions {
+  display: flex;
+  justify-content: center;   /* center horizontally */
+  margin-top: 40px;          /* space between cards and button */
+  margin-bottom: 20px;       /* optional: spacing below */
+}
+
+/* Button style (orange rectangular) */
+.industries-v2 .iv2-actions .btn {
+  background-color: #f95e27;   /* brand orange */
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 12px 32px;
+  border-radius: 6px;
+  text-decoration: none;
+  border: none;
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.industries-v2 .iv2-actions .btn:hover {
+  background-color: #d94e1f;   /* darker orange on hover */
+  transform: translateY(-2px); /* subtle lift */
+}
+
+.industries-v2 .iv2-actions .btn:active {
+  transform: translateY(0);    /* reset on click */
+}
+
+
+
+.why-choose-us-modern {
+  padding: 20px 20px 60px;
+  background-color: #fff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.why-choose-us-modern,
+.why-choose-us {        
+  background-color: transparent !important;
+  box-shadow: none;
+}
+
+
+.section-title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 60px;
+  justify-content: center;
+  align-items: center;
+}
+
+.road-map-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 300px;
+  margin: auto;
+}
+
+.dotted-path {
+  width: 100%;
+  height: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.features {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  z-index: 2;
+}
+
+.feature-card {
+  position: absolute;
+  width: 220px;
+  padding: 25px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+}
+
+.feature-card:hover {
+  background: #41c7c4;
+  color: #fff;
+}
+
+.feature-card img {
+  width: 40px;
+  margin-bottom: 12px;
+}
+
+.feature-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.feature-card p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.card1 {
+  top: 140px;
+  left: 2%;
+}
+
+.card2 {
+  top: 30px;
+  left: 26%;
+}
+
+.card3 {
+  top: 150px;
+  left: 52%;
+}
+
+.card4 {
+  top: 120px;
+  left: 78%;
+  position: relative;
+  background-size: cover;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  background-color: #fff; 
+  z-index: 1;
+}
+.card4::before {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 120px;
+  left: -200px; 
+  top: 130px;
+  background: no-repeat center/contain
+   url("data:image/svg+xml;utf8,\ <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 260 120'>\ <path d='M0,90 Q130,150 260,90' fill='none' stroke='%23D4E6E8' stroke-width='4' stroke-dasharray='10,10' stroke-linecap='round'/>\ </svg>");
+  pointer-events: none;
+  z-index: -1;   
+}
+
+@media (max-width: 768px) {
+  .why-choose-us-modern {
+    padding: 20px 20px 60px;  /* much tighter */
+  }
+}
+
+/* Mobile view for Why Choose Us section */
+@media (max-width: 768px) {
+  /* Hide the horizontal dotted path */
+  .road-map-container {
+    height: auto;
+  }
+
+  .dotted-path {
+    display: none;
+  }
+
+  /* Stack the cards vertically */
+  .features {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: auto;
+    position: static;
+    align-items: center;
+  }
+
+  .feature-card {
+    position: static; /* remove absolute positioning */
+    width: 90%;
+    max-width: 320px;
+  }
+}
+
+
+/* ===== Target Audience — layout ===== */
+.audience {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+  padding-block: clamp(40px, 7vw, 80px);        /* top & bottom */
+  padding-inline: clamp(16px, 5vw, 56px); 
+}
+
+.audience-heading{
+  font-size: 2.0rem; 
+  color: #0c2340;
+}
+
+.audience-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+@media (max-width: 992px){ .audience-grid{ grid-template-columns: 1fr 1fr; } }
+@media (max-width: 640px){ .audience-grid{ grid-template-columns: 1fr; } }
+
+/* ===== Card shell ===== */
+.audience-card{
+  position: relative;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+  overflow: hidden;
+  transform: translateY(6px);
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+
+/* subtle border glow on hover */
+.audience-card::after{
+  content:"";
+  position:absolute; inset:0;
+  border-radius: 14px;
+  pointer-events:none;
+  background: radial-gradient(120% 60% at 50% 0%, rgba(29,78,216,.12), transparent 60%),
+              radial-gradient(120% 60% at 50% 100%, rgba(14,165,233,.12), transparent 60%);
+  opacity: 0; transition: opacity .35s ease;
+}
+
+.audience-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(0,0,0,.12);
+}
+.audience-card:hover::after{ opacity: 1; }
+
+/* ===== Media with Ken-Burns on hover ===== */
+.audience-media{
+  aspect-ratio: 16 / 10; 
+  overflow: hidden; position: relative;
+}
+
+.audience-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.02);
+  transition: transform .8s ease;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.audience-card:hover .audience-media img{ transform: scale(1.08); }
+
+.audience-media::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.35), transparent 60%);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+
+.audience-card h3{ margin:14px 18px 6px; font-size: 1.15rem; line-height: 1.35; }
+.audience-card p{ margin:0 18px 12px; color:#334155; }
+.audience-link{
+  display:inline-block; margin:0 18px 18px;
+  font-weight:600; color:#0f3d66; text-decoration:none; position:relative;
+}
+.audience-link::after{
+  content:""; position:absolute; left:0; right:100%; bottom:-2px; height:2px;
+  background: currentColor; transition:right .35s ease;
+}
+.audience-card:hover .audience-link::after{ right:0; }
+
+.reveal-up{ opacity:0; transform: translateY(24px); }
+.reveal-up.is-visible{ opacity:1; transform: translateY(0); transition: all .6s cubic-bezier(.2,.7,0,.9); }
+
+@media (prefers-reduced-motion: reduce){
+  .audience-card,.audience-media img,.audience-link::after{ transition:none !important; }
+  .reveal-up{ opacity:1; transform:none; }
+}
+
+/* ============ Industries v2 (isolated) ============ */
+.industries-v2{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.iv2-heading{
+  margin: 0 0 18px;
+  font-size: clamp(1.6rem, 2vw + 1rem, 2.2rem);
+  font-weight: 800;
+  color: #0c2340;
+  text-align: center;
+}
+
+/* horizontal row */
+.iv2-row{
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 12px;
+}
+
+.iv2-row::-webkit-scrollbar{ height: 8px; }
+.iv2-row::-webkit-scrollbar-thumb{ background:#0d47a1; border-radius:6px; }
+.iv2-row::-webkit-scrollbar-track{ background:#eee; }
+
+/* cards */
+.iv2-card{
+  position: relative;
+  flex: 0 0 300px;         /* card width */
+  height: 360px;           /* card height */
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--bg, url('../images/fallback.jpg')) center/cover no-repeat;
+  scroll-snap-align: start;
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+  transition: transform .28s ease, box-shadow .28s ease;
+  isolation: isolate;      /* ensures overlays blend only within card */
+  cursor: default;
+}
+.iv2-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0,0,0,.14);
+}
+
+/* base legibility fade over image */
+.iv2-card::before{
+  content:"";
+  position:absolute; inset:0;
+  background: linear-gradient(to top, rgba(0,0,0,.25) 12%, rgba(0,0,0,0) 45%);
+  z-index:1; pointer-events:none;
+}
+
+/* 🔵 blue gradient overlay (only on hovered card) */
+.iv2-card::after{
+  content:"";
+  position:absolute; inset:0;
+  background: linear-gradient(to top, rgba(13,71,161,.95) 0%, rgba(13,71,161,0) 50%);
+  transform: translateY(100%);     /* hidden below card */
+  transition: transform .45s ease;
+  z-index:2; pointer-events:none;
+}
+.iv2-card:hover::after{
+  transform: translateY(50%);      /* rise to half on hover */
+}
+
+/* title at bottom */
+.iv2-title{
+  position:absolute; left:16px; right:16px; bottom:14px;
+  margin:0; color:#fff; z-index:3;
+  font-size:1.12rem; font-weight:800; line-height:1.3;
+  text-shadow: 0 2px 6px rgba(0,0,0,.45);
+}
+
+/* respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .iv2-card, .iv2-card::after{ transition: none; }
+  .iv2-card:hover{ transform: none; box-shadow: 0 8px 24px rgba(0,0,0,.08); }
+}
+
+
+/* ---- FIX: Gradient overlay for Industries cards ---- */
+.industries-row .ind-card{
+  position: relative !important;
+  overflow: hidden !important;
+  isolation: isolate; /* keep overlays inside the card */
+}
+
+/* subtle dark legibility fade (always on) */
+.industries-row .ind-card::before{
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.25) 12%, rgba(0,0,0,0) 45%);
+  z-index: 1; pointer-events: none;
+}
+
+/* BLUE gradient: hidden by default, shows on hovered card only */
+.industries-row .ind-card::after{
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(13,71,161,.95) 0%, rgba(13,71,161,0) 50%);
+  transform: translateY(100%);
+  transition: transform .45s ease;
+  z-index: 2; pointer-events: none;
+}
+.industries-row .ind-card:hover::after{
+  transform: translateY(50%);
+}
+
+/* title above overlays */
+.industries-row .ind-name{
+  position: absolute; left: 16px; right: 16px; bottom: 14px;
+  z-index: 3; color: #fff; font-weight: 800;
+  text-shadow: 0 2px 6px rgba(0,0,0,.45);
+}
+
+/* --- Blue gradient overlay (from about.css .team-overlay), adapted --- */
+.industries-row .ind-card{
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;              /* keep overlays inside each card */
+}
+
+/* optional subtle dark fade for legibility (like your about.css) */
+.industries-row .ind-card::before{
+  content:"";
+  position:absolute; inset:0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,.25) 12%,
+    rgba(0,0,0,0) 45%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* 🔵 blue gradient (bottom → transparent top), hidden by default */
+.industries-row .ind-card::after{
+  content:"";
+  position:absolute; inset:0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 87, 183, 0.9) 0%,
+    rgba(0, 87, 183, 0.7) 40%,
+    rgba(0, 87, 183, 0) 100%
+  );
+  transform: translateY(100%);     /* start off-canvas (bottom) */
+  transition: transform .45s ease; /* smooth rise on hover */
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* rise to halfway on hover (show only on the hovered card) */
+.industries-row .ind-card:hover::after{
+  transform: translateY(50%);
+}
+
+/* ensure the title sits above overlays */
+.industries-row .ind-name{
+  position: absolute;
+  left: 16px; right: 16px; bottom: 14px;
+  z-index: 3;
+  color: #fff;
+  font-weight: 800;
+  text-shadow: 0 2px 6px rgba(0,0,0,.45);
+}
+
+/* --- Keep card and overlay setup from earlier --- */
+.industries-v2 .iv2-card{
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  /* NEW: shared variable to control overlay height */
+  --overlay-height: 38%;
+}
+
+/* Always-on blue gradient from bottom → top */
+.industries-v2 .iv2-card::before{
+  content:"";
+  position: absolute;
+  left: 0; right: 0; bottom: 0; top:auto;
+  height: var(--overlay-height);             /* <- use the variable */
+  background: linear-gradient(
+    0deg,                                     /* bottom to top */
+    rgba(0, 87, 183, 0.90) 0%,
+    rgba(0, 87, 183, 0.70) 40%,
+    rgba(0, 87, 183, 0.00) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+  transition: height .45s ease;              /* overlay growth */
+}
+
+/* On hover, grow the overlay to full height */
+.industries-v2 .iv2-card:hover{
+  --overlay-height: 100%;
+}
+
+/* Title above overlay; move it up as the overlay grows */
+.industries-v2 .iv2-title{
+  position: absolute;
+  left: 16px; right: 16px;
+  margin: 0;
+  color: #fff;
+  font-weight: 800;
+  line-height: 1.3;
+  text-shadow: 0 2px 6px rgba(0,0,0,.45);
+  z-index: 2;
+
+  /* Magic: ties title position to overlay height */
+  bottom: clamp(14px, calc(14px + (var(--overlay-height) - 38%)), calc(100% - 72px));
+  transition: bottom .45s ease;              /* sync timing with overlay */
+}
+
+/* If older hover overlay exists, disable it */
+.industries-v2 .iv2-card::after{ content: none !important; }
+
+/* Shared variables (keep your previous ones) */
+.industries-v2 .iv2-card{
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  --overlay-height: 38%;
+  --title-offset: 0px;          /* how much extra lift the title gets on hover */
+}
+
+/* Bottom→top blue overlay (already added earlier) */
+.industries-v2 .iv2-card::before{
+  content:"";
+  position: absolute;
+  left: 0; right: 0; bottom: 0; top:auto;
+  height: var(--overlay-height);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 87, 183, 0.90) 0%,
+    rgba(0, 87, 183, 0.70) 40%,
+    rgba(0, 87, 183, 0.00) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+  transition: height .45s ease;
+}
+
+/* On hover: grow overlay + lift title space */
+.industries-v2 .iv2-card:hover{
+  --overlay-height: 100%;
+  --title-offset: 56px;           /* tweak 40–72px based on your desc length */
+}
+
+/* Title rides up with the overlay */
+.industries-v2 .iv2-title{
+  position: absolute;
+  left: 16px; right: 16px;
+  margin: 0;
+  color: #fff;
+  font-weight: 800;
+  line-height: 1.3;
+  text-shadow: 0 2px 6px rgba(0,0,0,.45);
+  z-index: 2;
+  bottom: clamp(14px,
+                calc(14px + (var(--overlay-height) - 38%) + var(--title-offset)),
+                calc(100% - 96px));
+  transition: bottom .45s ease;
+}
+
+/* Description: hidden at rest, fades in at bottom on hover */
+.industries-v2 .iv2-desc{
+  position: absolute;
+  left: 16px; right: 16px; bottom: 14px;
+  z-index: 2;
+  color: #EAF2FF;
+  font-size: 0.95rem;
+  line-height: 1.35;
+  margin: 0;
+  opacity: 0;
+  transform: translateY(8px);
+  text-shadow: 0 1px 4px rgba(0,0,0,.35);
+  pointer-events: none;           /* card remains clickable */
+  transition: opacity .35s ease, transform .35s ease;
+}
+
+.industries-v2 .iv2-card:hover .iv2-desc{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hide the horizontal scrollbar below the Industries row (keep scrolling) */
+.industries-v2 .iv2-row{
+  /* keep: overflow-x:auto; (already set) */
+  padding-bottom: 0;              /* remove extra space reserved for the bar */
+  -ms-overflow-style: none;       /* IE/Edge */
+  scrollbar-width: none;          /* Firefox */
+}
+.industries-v2 .iv2-row::-webkit-scrollbar{
+  width: 0; height: 0;            /* Chrome/Safari/Edge */
+}
+.industries-v2 .iv2-row::-webkit-scrollbar-thumb,
+.industries-v2 .iv2-row::-webkit-scrollbar-track{
+  background: transparent;
+}
+
+/* Use hover only on devices that actually support it (desktops) */
+@media (hover: hover) and (pointer: fine){
+  .industries-v2 .iv2-card:hover{
+    --overlay-height: 100%;
+    --title-offset: 56px; /* keep in sync with your earlier value */
+  }
+  .industries-v2 .iv2-card:hover .iv2-desc{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile/tablet: tapping toggles this class via JS */
+.industries-v2 .iv2-card.is-open{
+  --overlay-height: 100%;
+  --title-offset: 56px;
+}
+.industries-v2 .iv2-card.is-open .iv2-desc{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ——— Industries: eliminate the last tiny hover shift ——— */
+
+/* 1) Kill the alt overlay path & any hover transforms */
+.industries-v2 .iv2-card::after { content: none !important; }
+
+.industries-v2 .iv2-card {
+  --overlay-height: 38% !important;   /* keep gradient fixed */
+  --title-offset: 0px !important;     /* prevent title lift */
+  transform: none !important;         
+  box-shadow: 0 8px 24px rgba(0,0,0,.08) !important;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  contain: paint;                      /* isolate paints to avoid jitter */
+}
+
+/* 2) Ensure hover does NOT change any of those variables or geometry */
+.industries-v2 .iv2-card:hover {
+  --overlay-height: 38% !important;
+  --title-offset: 0px !important;
+  transform: none !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,.08) !important;
+}
+
+/* 3) Keep the blue gradient static and avoid animating its size */
+.industries-v2 .iv2-card::before {
+  height: var(--overlay-height) !important;
+  transition: none !important;
+}
+
+/* 4) Optional: reveal text with opacity only (no translate to avoid sub-pixel shifts) */
+.industries-v2 .iv2-desc {
+  transform: none !important;
+  opacity: 0;
+  transition: opacity .25s ease;
+}
+.industries-v2 .iv2-card:hover .iv2-desc { opacity: 1; }
+
+/* Let header.css control landscape behavior */
+@media (orientation: landscape) and (max-width: 991.98px) {
+  .mobile-menu-icon { display: none !important; }
+  .nav-links,
+  .nav.is-open .nav-links,
+  .nav-links.active { display: flex !important; position: static !important; flex-direction: row !important; }
+}

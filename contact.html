@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="prefetch" href="js/animations.js" as="script">
+  <link rel="icon" type="image/png" href="images/R-logo.png">
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+      <div class="header-container">
+        <a class="logo" href="index.html" aria-label="Rinovea Home">
+          <img src="images/logo1.png" alt="Rinovea Logo" />
+        </a>
+
+        <nav class="nav" aria-label="Primary">
+          <button
+            class="mobile-menu-icon"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="primary-nav"
+          >
+            <span></span><span></span><span></span>
+          </button>
+
+          <ul id="primary-nav" class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="career.html">Career</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+<div class="top-wrap">
+  <div class="hero-image">
+    <div class="overlay"></div>
+    <div class="top-inner">
+      <h1>Contact Us</h1>
+      <p class="subtitle">
+        Collaboration starts with a conversation. Reach out to discuss your product vision, technology needs, or support requirements.
+      </p>
+    </div>
+  </div>
+</div>
+
+  <!-- Main Section -->
+<section class="contact-wrapper">
+  <div class="contact-grid">
+
+<div class="contact-photo">
+  <img src="../images/Contact Us.webp" alt="Contact Illustration">
+</div>
+
+      <!-- Form Card -->
+      <div class="card">
+        <h2>Get in Touch with Us</h2>
+<form id="contactForm" action="https://formsubmit.co/rinovea.connect@gmail.com" method="POST" onsubmit="return validateForm()">
+  <div class="row">
+    <label for="name">Name <span>*</span></label>
+    <input id="name" name="name" type="text" placeholder="Your name" required />
+    <small class="err" data-err-for="name"></small>
+  </div>
+  <div class="row">
+    <label for="email">Email <span>*</span></label>
+    <input id="email" name="email" type="email" placeholder="example@company.com" required />
+    <small class="err" data-err-for="email"></small>
+  </div>
+  <div class="row">
+    <label for="phone">Phone Number <span>*</span></label>
+    <input id="phone" name="phone" type="tel" pattern="^\+?[0-9]{10,12}$" title="Please enter a valid phone number (e.g., +911234567890 or 1234567890)" placeholder="+91 000 000 000" required />
+    <small class="err" data-err-for="phone"></small>
+  </div>
+  <div class="row">
+    <label for="message">Message <span>*</span></label>
+    <textarea id="message" name="message" rows="5" placeholder="Leave us a Message" required></textarea>
+    <small class="err" data-err-for="message"></small>
+  </div>
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_subject" value="New Inquiry from Rinovea Website">
+  <input type="hidden" name="_template" value="table">
+  <button class="btn" type="submit">Send Message</button>
+  <p class="note" id="formNote" role="status" aria-live="polite"></p>
+</form>
+
+<script>
+function validateForm() {
+  const phone = document.getElementById('phone').value;
+  const phoneError = document.querySelector('[data-err-for="phone"]');
+
+  // Remove any previous error messages
+  phoneError.textContent = '';
+
+  // Check if phone number is empty or invalid
+  if (!phone) {
+    phoneError.textContent = 'Phone number is required.';
+    return false;
+  }
+
+  // Basic validation for 10-12 digits (adjust pattern as needed)
+  const phonePattern = /^\+?[0-9]{10,12}$/;
+  if (!phonePattern.test(phone)) {
+    phoneError.textContent = 'Please enter a valid phone number (e.g., +911234567890 or 1234567890).';
+    return false;
+  }
+
+  return true;
+}
+</script>
+      </div>
+
+      <!-- Info (no box) -->
+      <aside class="info">
+        <div class="block">
+          <h3>Call Us</h3>
+          <p class="muted">Monday – Friday, 9:00 AM – 6:00 PM</p>
+          <a href="tel:+441619876543">+91 7559455825</a><br>
+        </div>
+        <div class="divider"></div>
+        <div class="block">
+          <h3>Email Support</h3>
+          <p class="muted">We’ll get back to you within 24 hours</p>
+          <a href="mailto:support@apexadvisory.com">contact@rinovea.com</a>
+        </div>
+        <div class="divider"></div>
+        <div class="block">
+          <h3>Baner, Pune, India</h3>
+          <p class="muted">Visit our office Monday – Friday, 9:00 AM – 6:00 PM</p>
+          <address>
+            <a href="https://share.google/zpN8BLO4L4UeoFE0y" target="_blank" rel="noopener">
+              Baner, Pune, India
+            </a>
+          </address>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+<section class="map-section">
+  <div class="container">
+   <!-- <h2 class="map-title">Our Location</h2> -->
+    <div class="map">
+      <iframe
+        src="https://maps.google.com/maps?q=Baner,+Pune,+Maharashtra,+India&z=14&output=embed"
+        style="border:0; width:100%; height:100%;"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</section>
+
+    <!-- Load Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts to load header & footer -->
+  <script>
+    fetch("footer.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("footer-placeholder").innerHTML = data)
+      .catch(err => console.error("Footer load error:", err));
+  </script>
+
+
+<script src="js/index.js" defer></script>
+<script src="js/header.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us</title>
+
+  <!-- Common Styles -->
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/about.css" />
+  <link rel="prefetch" href="js/animations.js" as="script">
+  <link rel="icon" type="image/png" href="images/R-logo.png">
+  <script>document.documentElement.classList.add('js');</script>
+
+
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <a class="logo" href="index.html" aria-label="Rinovea Home">
+        <img src="images/logo1.png" alt="Rinovea Logo" />
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <button
+          class="mobile-menu-icon"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+        >
+          <span></span><span></span><span></span>
+        </button>
+
+        <ul id="primary-nav" class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="career.html">Career</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="about-intro">
+  <div class="about-intro-container">
+    <div class="about-intro-left">
+<h2>
+  Driving Business Success through<br>
+  <span class="highlight typed-slot slot-exp"><span id="type-expertise"></span></span><span class="ampersand">&</span><span class="highlight typed-slot slot-inv"><span id="type-innovation"></span></span>
+</h2>
+
+    </div>
+
+    <div class="about-intro-right">
+      <p>
+        Rinovea is a next-generation software development company that partners
+        with product-driven organizations to craft scalable, resilient, and innovative
+        technology solutions. We bring deep expertise in cloud-native architectures,
+        mobile platforms, and artificial intelligence to accelerate your product journey.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="about-hero">
+  <picture>
+    <!-- Optional: high-DPI/desktop -->
+    <source srcset="images/about/about.webp" media="(min-width: 1200px)">
+    <!-- Tablet -->
+    <source srcset="images/about/about.webp" media="(min-width: 768px)">
+    <!-- Mobile fallback -->
+    <img src="images/about/about.webp" alt="Rinovea team in discussion" loading="lazy">
+  </picture>
+</section>
+
+
+<section class="vm-section">
+  <!-- Row 1: Vision (text left, image right) -->
+  <div class="vm-row">
+    <div class="vm-text fade-slide">
+      <h3>Our Vision</h3>
+      <p>
+        To be the global product ally that helps companies innovate faster, scale smarter, and establish lasting technology excellence — from products to global capability centers.
+      </p>
+    </div>
+    <div class="vm-media zoom-fade">
+      <img src="../images/about/vision.webp" alt="Strategy discussion" loading="lazy">
+    </div>
+  </div>
+
+  <!-- Row 2: Mission (image left, text right) -->
+  <div class="vm-row vm-row-reverse">
+    <div class="vm-media zoom-fade">
+      <img src="../images/about/mission.webp" alt="Team collaboration" loading="lazy">
+    </div>
+    <div class="vm-text fade-slide">
+      <h3>Our Mission</h3>
+      <p>
+        Our mission is to partner with visionary startups, product innovators, and global enterprises to design, build, and scale modern web, mobile, cloud, and AI platforms. Beyond products, we help organizations establish Global Capability Centers (GCCs) in India - powered by a product mindset, engineering excellence, and global scale.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- Founder Section -->
+<div class="founder-section">
+  <h2 class="founder-heading">Founder’s Insight</h2> 
+  <h3 class="founder-subheading">Led by seasoned expert, delivering innovative, tailored solutions.</h3>
+
+  <div class="founder-insight">
+    <!-- Left: Photo + Name + Role -->
+    <div class="founder-left">
+      <div class="founder-photo">
+        <img src="../images/about/shrish.webp" alt="Shrish Sontakke">
+      </div>
+      <h3 class="member-name">Shrish Sontakke</h3>
+      <p class="member-role">Founder & CEO</p>
+    </div>
+
+    <!-- Right: CEO Message -->
+    <div class="founder-message">
+      <p>
+        At Rinovea, my vision is to empower product-driven organizations to turn ideas into impactful, market-ready solutions. 
+        Having built and scaled global engineering teams, I’ve seen that true success comes not just from technology, but from agility, 
+        discipline, and a strong product mindset.
+      </p>
+      <p>
+        Rinovea exists to be that catalyst – a trusted ally that helps you innovate faster, modernize smarter, and scale with confidence.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+<section class="team-section reveal-on-scroll is-visible">
+
+  <!-- Load Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts to load header & footer -->
+  <script>
+    fetch("footer.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("footer-placeholder").innerHTML = data)
+      .catch(err => console.error("Footer load error:", err));
+  </script>
+
+
+
+<script src="js/index.js" defer></script>
+<script src="js/header.js" defer></script>
+<script src="js/about.js" defer></script>
+
+</body>
+</html>

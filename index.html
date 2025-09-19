@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rinovea</title>
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="icon" type="image/png" href="images/R-logo.png">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.10.2/lottie.min.js"></script>
+
+</head>
+<body>
+
+<div id="intro-loader">
+  <img src="images/logo.png" alt="Rinovea Logo" class="intro-logo">
+  <div class="intro-words">
+    <span class="word">Innovate</span>
+    <span class="word">Accelerate</span>
+    <span class="word">Transform</span>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="header-container">
+    <a class="logo" href="index.html" aria-label="Rinovea Home">
+      <img src="images/logo1.png" alt="Rinovea Logo" />
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <button
+        class="mobile-menu-icon"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="primary-nav"
+      >
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul id="primary-nav" class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="career.html">Career</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<!-- Hero Section -->
+<section class="hero theme-light">
+  <!-- Vanta will mount here -->
+  <div id="hero-bg" aria-hidden="true"></div>
+
+  <!-- Your existing hero content -->
+  <div class="hero-container">
+    <h1 class="hero-typing">
+      <span class="typed-line" id="line1"></span><br>
+      <span class="typed-line" id="line2"></span>
+    </h1>
+    <h2>Not Just Code. Real Products. Real Impact.</h2>
+    <p>
+      Rinovea is a next-generation technology partner helping product-driven companies build modern web, <br>
+      mobile, cloud, and AI applications - crafted with clarity, engineered for scale. <br>
+      From MVPs to GCCs, we’re your product ally from idea to impact.
+    </p>
+    <div class="hero-buttons">
+      <a href="services.html" class="btn btn-outline">Discover Our Services</a>
+      <a href="contact.html" class="btn btn-primary">Book a Free Consultation</a>
+    </div>
+  </div>
+</section>
+
+<section class="about-section">
+  <div class="about-content">
+    <!-- Left side: text -->
+    <div class="about-text">
+      <span class="about-tag">About us</span>
+      <h2>Your Technology Partner for Product-Led Growth</h2>
+      <p>
+        Rinovea partners with product-driven organizations to design, build, and scale world-class software. With deep expertise in cloud-native architectures, mobile and web platforms, and artificial intelligence, we deliver solutions engineered for performance, resilient by design, and built to drive lasting impact.<br>
+        From MVPs to Global Capability Centers, we work as your ally at every stage of the product journey - turning ideas into innovative, scalable, and future-ready products.
+      </p>
+      <a href="about.html" class="btn btn-primary">Learn More</a>
+    </div>
+
+    <!--
+    <div class="about-image">
+      <video autoplay muted loop playsinline>
+        <source src="images/Hero Video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  -->
+    <!-- Right side: animation -->
+<div class="about-image no-overlay">
+  <div id="about-lottie" aria-label="Developer skills animation" role="img"></div>
+</div>
+  </div>
+</section>
+
+
+<section class="value-section">
+  <h2 class="section-heading">What Sets Us Apart</h2>
+
+  <div class="value-cards">
+    <div class="value-card" style="background-image: url('images/GCC.webp')">
+      <div class="card-overlay"></div>
+<div class="card-info-box">
+  <div class="info-text">
+    <h3>Global Capability Centers (GCCs)</h3>
+    <p>From team formation and infrastructure to compliance and governance, we manage every aspect of Global Capability Centers (GCC) setup – enabling you to build high-performing, autonomous tech teams in India with full visibility and control.</p>
+  </div>
+  <div class="info-action">➜</div>
+</div>
+
+    </div>
+
+    <div class="value-card" style="background-image: url('images/image 2.webp')">
+      <div class="card-overlay"></div>
+<div class="card-info-box">
+  <div class="info-text">
+    <h3>Product Engineering DNA</h3>
+    <p>We think beyond code—delivering business value through user-centric, scalable, and maintainable products. Our focus is on building scalable, maintainable, and intuitive solutions that align with your business goals.</p>
+  </div>
+  <div class="info-action">➜</div>
+</div>
+
+    </div>
+
+    <div class="value-card" style="background-image: url('images/agile.webp')">
+      <div class="card-overlay"></div>
+<div class="card-info-box">
+  <div class="info-text">
+    <h3>Agile Execution</h3>
+    <p>Our transformation programs align people, process, and platforms to unlock innovation, improve delivery velocity, and scale agility across your organization.</p>
+  </div>
+  <div class="info-action">➜</div>
+</div>
+
+    </div>
+
+    <div class="value-card" style="background-image: url('images/cloud.webp')">
+      <div class="card-overlay"></div>
+<div class="card-info-box">
+  <div class="info-text">
+    <h3>Cloud & AI Proficiency</h3>
+    <p>Unlock agility, reliability, and speed with modern cloud-native design – leveraging Kubernetes, serverless, and DevOps best practices across leading cloud platforms.</p>
+  </div>
+  <div class="info-action">➜</div>
+</div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Industries v2 (fresh) -->
+<section class="industries-v2" id="industries">
+  <h2 class="iv2-heading">Industries We Serve</h2>
+
+  <div class="iv2-row" id="iv2Row" aria-label="Industries">
+    <div class="iv2-card" style="--bg:url('../images/Industries We Serve/FinTech.webp')">
+      <span class="iv2-title">FinTech &amp; Financial Services</span>
+    </div>
+
+    <div class="iv2-card" style="--bg:url('../images/Industries We Serve/Healthcare & HealthTech.webp')">
+      <span class="iv2-title">Healthcare &amp; HealthTech</span>
+    </div>
+
+    <div class="iv2-card" style="--bg:url('../images/Industries We Serve/Logistic and Supply chain.webp')">
+      <span class="iv2-title">Logistics &amp; Supply Chain</span>
+    </div>
+
+    <div class="iv2-card" style="--bg:url('../images/Industries We Serve/EdTech & Learning.webp')">
+      <span class="iv2-title">EdTech &amp; Learning Platforms</span>
+    </div>
+
+    <div class="iv2-card" style="--bg:url('../images/Industries We Serve/Saas Applicaiton Development with Tech team.webp')">
+      <span class="iv2-title">Enterprise SaaS</span>
+    </div>
+
+    <div class="iv2-card" style="--bg:url('../images/Industries We Serve/Smart Cities & IoT.webp')">
+      <span class="iv2-title">Smart Cities &amp; IoT</span>
+    </div>
+  </div>
+<div class="iv2-actions">
+  <a href="industries.html" class="btn">View All</a>
+</div>
+
+</section>
+
+
+
+<section class="why-choose-us-modern">
+  <h2 class="section-title">Why choose us?</h2>
+  <div class="road-map-container">
+    <svg class="dotted-path" viewBox="0 0 1000 250" preserveAspectRatio="none">
+      <path d="M 0 200 Q 250 0, 500 200 T 1000 200" stroke="#D4E6E8" stroke-width="4" fill="none" stroke-dasharray="10,10"/>
+    </svg>
+
+    <div class="features">
+      <div class="feature-card card1">
+        <img src="../images\icons\expert.png" alt="Shipping Icon" />
+        <h3>Founder-Led Expertise</h3>
+        <p>Deep technical leadership across cloud, AI, and agile.</p>
+      </div>
+      <div class="feature-card card2">
+        <img src="../images\icons\growth.png" alt="Warranty Icon" />
+        <h3>Built for Scale</h3>
+        <p>Architecture and design for the next billion users.</p>
+      </div>
+      <div class="feature-card card3">
+        <img src="../images\icons\speed.png" alt="Materials Icon" />
+        <h3>Speed with Discipline</h3>
+        <p> Agile speed with enterprise-grade rigor.</p>
+      </div>
+      <div class="feature-card card4">
+        <img src="../images\icons\global.png" alt="Support Icon" />
+        <h3>Global Standards, Local Execution</h3>
+        <p> A powerful blend of innovation and operational excellence.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="audience">
+        <h2 class="audience-heading">Who We Partner With</h2>
+      <p class="audience-subheading">
+       We co-create with those who see technology not just as a tool, but as a growth engine.
+      </p>
+  <div class="audience-grid">
+    <article class="audience-card">
+      <div class="audience-media"><img src="../images/Scaling Stratups.webp" alt="" width="600" height="400"></div>
+      <h3>Scaling Startups</h3>
+      <p>Accelerating product-market fit with rapid MVP delivery and scale-ready architecture.</p>
+      <!--<a class="audience-link" href="#">Read More</a> -->
+    </article>
+
+        <article class="audience-card">
+      <div class="audience-media"><img src="../images/Product Companies.webp" alt="" width="600" height="400"></div>
+      <h3>Product Companies</h3>
+      <p>Modernizing platforms, building new revenue streams, and staying ahead of market shifts.</p>
+    </article>
+
+        <article class="audience-card">
+      <div class="audience-media"><img src="../images/Global Enterprises.webp" alt="" width="600" height="400"></div>
+      <h3>Global Enterprises</h3>
+      <p>Establishing and scaling innovation hubs - GCC in India with long-term vision.</p>
+    </article>
+
+  </div>
+</section>
+
+  <div id="footer-placeholder"></div>
+  
+
+  <!-- Script to load footer -->
+  <script>
+    fetch("footer.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("footer-placeholder").innerHTML = data;
+      })
+      .catch(error => console.error("Footer load error:", error));
+  </script>
+
+
+<!-- Load scripts (use defer to avoid blocking) -->
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.24/vanta.globe.min.js"></script>
+
+<script>
+  (function(){
+    // Respect user preference for reduced motion
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function initVanta(){
+      const el = document.getElementById('hero-bg');
+      if (!el || !window.VANTA || !window.THREE || prefersReduced) return;
+
+      // Keep a reference so we can destroy it later if needed (SPA/navigation)
+      window.vantaEffect = window.VANTA.GLOBE({
+        el,
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        color: 0x96bdfa,     // navy lines/points
+        color2: 0xf95e27,    // subtle accent
+        backgroundColor: 0xfcfcfc, // near-white background
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initVanta);
+    } else {
+      initVanta();
+    }
+
+    // Clean up on page unload or SPA route change
+    window.addEventListener('pagehide', () => {
+      if (window.vantaEffect && typeof window.vantaEffect.destroy === 'function') {
+        window.vantaEffect.destroy();
+        window.vantaEffect = null;
+      }
+    });
+  })();
+</script>
+
+<script defer src="https://unpkg.com/lottie-web/build/player/lottie.min.js"></script>
+<script>
+  (function () {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const el = document.getElementById('about-lottie');
+    if (!el) return;
+
+    const animation = lottie.loadAnimation({
+      container: el,
+      renderer: 'svg',
+      loop: true,
+      autoplay: !prefersReduced,
+      path: '../images/TsFn9Fus3Q.json' // <-- put your JSON here
+      // or 'assets/lottie/goeEZvzUNq.json'
+    });
+
+    if (prefersReduced) animation.goToAndStop(0, true);
+  })();
+</script>
+
+<script src="js/animations.js" defer></script>
+<script src="js/index.js" defer></script>
+<script src="js/header.js" defer></script>
+
+</body>
+</html>
